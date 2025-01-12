@@ -53,8 +53,8 @@ function sumArrays(/* arr1, arr2 */) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.includes(value) ? arr.indexOf(value) : -1;
 }
 
 /**
@@ -71,8 +71,9 @@ function findElement(/* arr, value */) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  const arr2 = arr.filter((el) => el === item);
+  return arr2.length;
 }
 
 /**
@@ -101,8 +102,8 @@ function removeFalsyValues(/* arr */) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((e) => e.length);
 }
 
 /**
@@ -163,8 +164,9 @@ function isValueEqualsIndex(/* arr */) {
  *    insertItem([ 1, 3, 4, 5 ], 2, 1)  => [ 1, 2, 3, 4, 5 ]
  *    insertItem([ 1, 'b', 'c'], 'x', 0) => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
+function insertItem(arr, item, index) {
+  arr.splice(index, 0, item);
+  return arr;
 }
 
 /**
@@ -178,8 +180,9 @@ function insertItem(/* arr, item, index */) {
  *    getHead([ 'a', 'b', 'c', 'd'], 3) => [ 'a', 'b', 'c' ]
  *    getHead([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getHead(/* arr, n */) {
-  throw new Error('Not implemented');
+function getHead(arr, n) {
+  const arr2 = arr.slice(0, n);
+  return arr2;
 }
 
 /**
@@ -193,8 +196,9 @@ function getHead(/* arr, n */) {
  *    getTail([ 'a', 'b', 'c', 'd'], 3) => [ 'b', 'c', 'd' ]
  *    getTail([ 'a', 'b', 'c', 'd'], 0) => []
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  const arr2 = [];
+  return n === 0 ? arr2 : arr.splice(-n);
 }
 
 /**
@@ -209,8 +213,8 @@ function getTail(/* arr, n */) {
  *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
  *    doubleArray([]) => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  return arr.concat(arr);
 }
 
 /**
@@ -224,8 +228,8 @@ function doubleArray(/* arr */) {
  *    toStringList([1, 2, 3, 4, 5]) => '1,2,3,4,5'
  *    toStringList(['rock', 'paper', 'scissors']) => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join();
 }
 
 /**
@@ -240,8 +244,9 @@ function toStringList(/* arr */) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  const unic = new Set(arr);
+  return Array.from(unic);
 }
 
 /**
@@ -338,8 +343,8 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  return new Array(len).fill(0).map((_, i) => 2 * i + 1);
 }
 
 /**
